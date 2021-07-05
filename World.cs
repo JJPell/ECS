@@ -25,6 +25,11 @@ namespace ECS
             return id;
         }
 
+        public bool EntityExists(Guid entity) 
+        {
+            return this.Entities.ContainsKey(entity);
+        }
+
         public IComponent[] GetComponents(Guid entity)
         {
             IComponent[] components;
@@ -37,7 +42,13 @@ namespace ECS
             return components;
         }
 
-        public Nullable<T> GetComponentByType<T>(Guid entity)
+        /// <summary>
+        /// Gets a component from an entiry by type
+        /// </summary>
+        /// <typeparam name="T">Component Type</typeparam>
+        /// <param name="entity">Entity ID</param>
+        /// <returns>A tuple with the first value being if the component exists on the entity and the second being the component</returns>
+        public (bool, T) GetComponentByType<T>(Guid entity)
         {
             var components = this.GetComponents(entity);
 
@@ -45,11 +56,11 @@ namespace ECS
             {
                 if (component.GetType() == typeof(T))
                 {
-                    return (T?)component;
+                    return (true, (T)component);
                 }
             }
 
-            return null;
+            return (false, default(T));
         }
 
         public void RegisterSystem(System system)
