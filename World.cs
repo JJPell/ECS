@@ -25,7 +25,7 @@ namespace ECS
             return id;
         }
 
-        public bool EntityExists(Guid entity) 
+        public bool IsEntity(Guid entity) 
         {
             return this.Entities.ContainsKey(entity);
         }
