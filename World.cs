@@ -9,14 +9,9 @@ namespace ECS
 {
     public class World
     {
-        public Dictionary<Guid, IComponent[]> Entities = new Dictionary<Guid, IComponent[]>();
+        public EntityCollection Entities = new EntityCollection();
 
         public Dictionary<Type, System> Systems = new Dictionary<Type, System>();
-
-        public World()
-        {
-
-        }
 
         public Guid CreateEntity(IComponent[] components)
         {
@@ -63,6 +58,24 @@ namespace ECS
             return (false, default(T));
         }
 
+        public EntityCollection GetEntitiesWithComponent<T>() {
+            var collection = new EntityCollection();
+
+            foreach (var entity in Entities)
+            {
+                var id = entity.Key;
+
+                var (containsComponent, _) = GetComponentByType<T>(id);
+
+                if (containsComponent)
+                {
+                    collection.Add(id, entity.Value);
+                }
+            }
+
+            return collection;
+        }
+
         public void RegisterSystem(System system)
         {
             var type = system.GetType();
@@ -73,6 +86,11 @@ namespace ECS
             }
 
             this.Systems[type] = system;
+        }
+
+        public void RemoveEntity(Guid entityId)
+        {
+            Entities.Remove(entityId);
         }
 
         public void ReplaceComponent(Guid entity, IComponent component)
