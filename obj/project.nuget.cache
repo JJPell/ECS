@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tiw8ZSGNHXdlHBvY7cGUtzZHgIe6XSl+7S8oUlsRFiPNHb1P+gSVAKZ9x/koExErmynXsRf2E8f4K3Blzb3JHQ==",
+  "dgSpecHash": "7sBlcjta7IagDVXvYnH/cZ1lcgPf3LBHtWJvGW2T9soxYysy6iMKixbnZ7cyRCqwAri9xhvGr583zryhGV/Teg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\james.pell\\ECS\\ECS.csproj",
+  "projectFilePath": "C:\\Users\\pelly\\ECS\\ECS.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

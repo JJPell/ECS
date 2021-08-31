@@ -8,20 +8,28 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\james.pell\\.nuget\\packages\\": {}
+    "C:\\Users\\pelly\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\james.pell\\ECS\\ECS.csproj",
+      "projectUniqueName": "C:\\Users\\pelly\\ECS\\ECS.csproj",
       "projectName": "ECS",
-      "projectPath": "C:\\Users\\james.pell\\ECS\\ECS.csproj",
-      "packagesPath": "C:\\Users\\james.pell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\james.pell\\ECS\\obj\\",
+      "projectPath": "C:\\Users\\pelly\\ECS\\ECS.csproj",
+      "packagesPath": "C:\\Users\\pelly\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pelly\\ECS\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\james.pell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\pelly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -60,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
