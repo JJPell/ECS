@@ -159,11 +159,24 @@ namespace ECS
             this.Entities[entity] = components;
         }
 
+        public void ReplaceComponentsOfSameType<T>(int entity, IComponent[] replaceComponents)
+        {
+            var components = this.GetComponents(entity).ToList();
+            components.RemoveAll((component) => component.GetType() == typeof(T));
+            var concat = components.Concat(replaceComponents);
+            this.Entities[entity] = (IComponent[])concat.ToArray();
+        }
+
         public void Run(int delta, int time)
         {
             foreach (var system in this.Systems)
             {
-                foreach (var entity in this.Entities)
+                var entities = this.Entities.ToDictionary(
+                    entry => entry.Key,
+                    entry => entry.Value
+                );
+
+                foreach (var entity in entities)
                 {
                     var components = entity.Value;
                     var isMatch = system.Value.Match(components);
